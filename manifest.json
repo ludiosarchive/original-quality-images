@@ -1,0 +1,17 @@
+{
+	"name": "Original Quality Images",
+	"version": "0.1",
+	"manifest_version": 2,
+	"author": "Ivan Kozik",
+	"description": "Redirects images on Twitter to original-quality images",
+	"homepage_url": "https://github.com/ludios/original-quality-images",
+	"background": {
+		"scripts": ["background.js"]
+	},
+	"permissions": [
+		"webRequest",
+		"webRequestBlocking",
+		"https://twitter.com/*",
+		"https://pbs.twimg.com/media/*"
+	]
+}
