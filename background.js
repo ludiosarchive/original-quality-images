@@ -14,7 +14,11 @@ chrome.webRequest.onBeforeRequest.addListener(
 		}
 	},
 	{
-		urls:  ['https://twitter.com/*', 'https://pbs.twimg.com/media/*'],
+		urls:  [
+			'https://twitter.com/*',
+			'https://pbs.twimg.com/media/*'
+		],
 		types: ['main_frame', 'sub_frame', 'image']
-	}, ['blocking']
+	},
+	['blocking']
 );
