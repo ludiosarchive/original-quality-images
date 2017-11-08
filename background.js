@@ -1,12 +1,15 @@
-const twimg_re = new RegExp('^https://pbs\\.twimg\\.com/media/', 'g');
+const twimg_re = new RegExp('^https://pbs\\.twimg\\.com/media/');
+let debug = false;
 
 chrome.webRequest.onBeforeRequest.addListener(
 	function(details) {
+		debug && console.log("Got", details);
 		const url = details.url;
 		if (twimg_re.test(url)) {
-			const orig = url.replace(/:[a-z]{1,10}$/, '') + ':orig';
-			if (orig != url) {
-				return {redirectUrl: orig};
+			const newUrl = url.replace(/:[a-z]{1,10}$/, '') + ':orig';
+			if (newUrl != url) {
+				debug && console.log("Redirecting to", newUrl);
+				return {redirectUrl: newUrl};
 			}
 		}
 	},
