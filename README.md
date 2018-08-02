@@ -1,10 +1,14 @@
 Original Quality Images
 ===
 Chrome extension that automatically redirects image requests to the original-quality image.
-Right now, supported on:
 
-*  Twitter: appends `:orig` at the end of `https://pbs.twimg.com/media/*` URLs
+Currently supported on:
 
+*   Twitter: appends `:orig` at the end of `https://pbs.twimg.com/media/*` URLs
+
+    Unfortunately, in some cases there is no `:orig` image and this results in a 404.
+
+*   Tumblr: gets `_raw` image from `http://data.tumblr.com`
 
 ## Install from source
 
